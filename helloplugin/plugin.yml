@@ -1,0 +1,7 @@
+name: HelloPlugin
+main: com.wellintlabs.hello.MyFirstPlugin
+version: 0.1
+commands:
+   hello:
+       description: It replies to player with greeting!
+       usage: /<command>

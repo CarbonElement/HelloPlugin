@@ -34,12 +34,14 @@ public class MyFirstPlugin extends JavaPlugin {
 				Player player = (Player) sender;
 				
 			String message = getConfig().getString("message");
-					if(message.contains("%playername%")) {
-						message = message.replace("%playername%", player.getName());
+						message = message.replace("%playername%", player.getName());;
+						 int oldplayers = getServer().getOnlinePlayers().size();
+						 String onlineplayers = Integer.toString(oldplayers);
+						message = message.replace("%onlineplayers%", onlineplayers);
+						int oldmaxplayers = getServer().getMaxPlayers();
+						String maxplayers = Integer.toString(oldmaxplayers);
+						message = message.replace("%maxplayers%", maxplayers);
 						player.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
-					} else {
-						player.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
-					}
 			
 			return true;
 			
@@ -52,13 +54,26 @@ public class MyFirstPlugin extends JavaPlugin {
 				if(sender instanceof Player) {
 					
 					Player player = (Player) sender;
+					if(player.hasPermission("hello.reload")) {
 					
 					reloadConfig();
 					player.sendMessage(ChatColor.GREEN + "[HelloPlugin] Config has been reloaded!");
+					} else {
+						player.sendMessage(ChatColor.RED + "You don't have permission to use this command");
+					}
 				} else {
 					reloadConfig();
 					getLogger().info("Config has been reloaded!");
 				}
+				} else {
+					if(sender instanceof Player) {
+					
+					Player player = (Player) sender;
+					player.sendMessage(ChatColor.GREEN + "[HelloPlugin] This argument does not exist!");
+				} else {
+					getLogger().info("Usage: /hello [reload]");
+				}
+				
 			}
 			
 			

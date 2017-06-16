@@ -5,6 +5,8 @@ I've just created this plugin in 5 minutes and what it does is greets a player f
 # Commands
 /hello : It replies to player with greeting!      
 /hello reload : Reloads the config.
+# Permissions
+hello.reload : Permission to reload the config!
 # Links
 Source-code: https://github.com/Khaled3010/HelloPlugin/tree/master/helloplugin      
   Download: https://github.com/Khaled3010/HelloPlugin/blob/master/helloplugin.jar

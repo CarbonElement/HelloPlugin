@@ -1,0 +1,7 @@
+#Update 1.5 provides special 'codes' that you can play with!
+#Available codes. More Codes will be added soon!
+# %playername% : Displays the player name
+# %onlineplayers% : Displays number of online players
+# %maxplayers% : Displays the number of max players
+#Default Message! You can customize what message is displayed when you type /hello
+message: '&4&lHello, %playername% and welcome to *your server*. There are currently %onlineplayers% out of %maxplayers% players online'
